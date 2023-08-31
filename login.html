@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzaria Francischini</title>
+<link rel="stylesheet" href="login-styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Bem-vindo à Pizzaria Francischini</h2>
+    <p>Por favor, faça login para continuar.</p>
+    <form>
+  <input type="email" class="login-input" id="email" placeholder="E-mail" required>
+  <span class="error-message" id="email-error"></span>
+  <input type="password" class="login-input" id="password" placeholder="Senha" required>
+  <span class="error-message" id="password-error"></span>
+  <button type="submit" class="login-button">Entrar</button>
+  <div class="forgot-password">
+    <a href="#" class="footer-link">Esqueceu a senha?</a>
+  </div>
+</form>
+    <p>Não tem uma conta? <a href="#" class="signup-link">Cadastrar-se</a></p>
+    <div class="social-login">
+      <a href="#" class="social-login-button">Entrar com Facebook</a>
+      <a href="#" class="social-login-button">Entrar com Google</a>
+    </div>
+    <div class="footer">
+      <a href="#" class="footer-link">Termos de Uso</a> | <a href="#" class="footer-link">Política de Privacidade</a>
+    </div>
+  </div>
+  <script src="login-scripts.js"></script>
+</body>
+</html>

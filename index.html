@@ -1,0 +1,224 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Francischini</title>
+  <meta name="description" content="Bem-vindo à Pizzaria Francischini - a melhor pizza da cidade!">
+  <meta name="keywords" content="Pizzaria, Pizza, Delivery, Francischini, Promoção">
+  <meta property="og:title" content="Pizzaria Francischini">
+  <meta property="og:description" content="Bem-vindo à Pizzaria Francischini - a melhor pizza da cidade!">
+  <meta property="og:image" content="url_da_imagem_de_destaque.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="promotion-banner">
+    <button class="close-btn" onclick="fecharBannerPromocao()"><i class="fas fa-times"></i></button>
+    <p><i class="fas fa-tags"></i> Desconto Exclusivo! Use o código "PIZZA15" e ganhe 15% de desconto na compra da segunda pizza!</p>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">Pizzaria Francischini</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar por produtos...">
+      <button type="button"><i class="fas fa-search"></i></button>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#">Produtos <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">Pizzas</a></li>
+            <li><a href="#">Bebidas</a></li>
+            <li><a href="#">Acompanhamentos</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Ofertas <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">Descontos</a></li>
+            <li><a href="#">Promoções</a></li>
+            <li><a href="#">Combos</a></li>
+            <li><a href="#">Entrega Grátis</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="user-actions">
+      <a href="#" id="cart-link" aria-label="Carrinho de compras">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+      </a>
+      <a href="#" id="favorite-link" aria-label="Favoritos">
+        <i class="fas fa-heart"></i>
+      </a>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
+  </header>
+
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="sidebar-header">
+      <h2><i class="fas fa-shopping-bag"></i> Itens da sua cesta</h2>
+      <button id="close-cart-sidebar" class="close-btn">&times;</button>
+    </div>
+    <ul id="cart-items-list" class="cart-items-list"></ul>
+    <div class="cart-total">
+      <p>Total: <span id="cart-total-sidebar">R$ 0,00</span></p>
+    </div>
+    <div class="product-size">
+      <label for="size-select">Tamanho:</label>
+      <select id="size-select">
+        <option value="s">Pequena</option>
+        <option value="m">Média</option>
+        <option value="l">Grande</option>
+      </select>          
+    </div>
+    <div id="cart-prices">
+      <p>Preços fixos dos tamanhos de pizza:</p>
+      <ul>
+        <li data-size="s">Tamanho Pequeno: R$ 2.00</li>
+        <li data-size="m">Tamanho Médio: R$ 4.00</li>
+        <li data-size="l">Tamanho Grande: R$ 6.00</li>
+      </ul>
+    </div>
+    <div class="cart-buttons">
+      <button class="confirm-btn" onclick="redirecionarParaLogin()">Confirmar</button>
+      <button class="add-more-btn" data-index="0" onclick="toggleCartMenu()">Adicionar mais item</button>
+    </div>
+  </div>
+
+  <div class="product-list">
+    <div class="product">
+      <img src="img/Pizza Margherita.jpg" alt="Pizza Margherita">
+      <h3>Pizza Margherita</h3>
+      <p>Uma deliciosa combinação de molho de tomate, queijo mussarela, manjericão fresco e azeite de oliva.</p>
+      <p class="price">R$ 19,99</p>
+      <button class="add-to-cart-btn" data-index="0" onclick="adicionarAoCarrinho(0)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="img/Pizza de Filé.jpg" alt="Pizza de Filé">
+      <h3>Pizza de Filé</h3>
+      <p>Uma pizza saborosa com suculentas fatias de filé grelhado, molho de tomate e queijo derretido.</p>
+      <p class="price">R$ 22,99</p>
+      <div class="promotion">Por apenas R$ 18,99</div>
+      <button class="add-to-cart-btn" data-index="1" onclick="adicionarAoCarrinho(1)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="img/Pizza de Cogumelo.jpg" alt="Pizza de Cogumelo">
+      <h3>Pizza de Cogumelo</h3>
+      <p>Uma deliciosa pizza com cogumelos frescos, molho de tomate, queijo derretido e ervas aromáticas.</p>
+      <p class="price">R$ 18,99</p>
+      <button class="add-to-cart-btn" data-index="2" onclick="adicionarAoCarrinho(2)">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <h2>Depoimentos de Clientes Satisfeitos</h2>
+    <p>Média de Avaliação: <span id="average-rating">-</span></p>
+
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        <p>"As pizzas da Pizzaria Francischini são simplesmente incríveis! A melhor que já provei!"</p>
+        <p class="customer-name">- Karinna Silva</p>
+        <p class="testimonial-date">22 de Fevereiro, 2023</p>
+        <div class="rating">Excelente</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        <p>"Sempre peço na Pizzaria Francischini e nunca me decepciono. Ótimo sabor e entrega rápida!"</p>
+        <p class="customer-name">- João Oliveira</p>
+        <p class="testimonial-date">12 de Abril, 2023</p>
+        <div class="rating">Bom</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        <p>"A entrega foi rápida porém a pizza não estava boa. Não recomendo!"</p>
+        <p class="customer-name">- Henrique Bittencourt</p>
+        <p class="testimonial-date">18 de Julho, 2023</p>
+        <div class="rating">Regular</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <h2>🍕 Assine Nossa Newsletter 🍕</h2>
+    <p>Fique por dentro das nossas novidades, promoções e descontos exclusivos!</p>
+    <form action="#" method="post">
+      <input type="email" name="email" placeholder="Seu e-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Insira um endereço de e-mail válido">
+      <button type="submit">Assinar</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Informações</h4>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos e Condições</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Atendimento ao Cliente</h4>
+          <ul>
+            <li><a href="#">Central de Ajuda</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Formas de Pagamento</h4>
+          <ul class="payment-icons">
+            <li><img src="logo/Visa.png" alt="Visa"></li>
+            <li><img src="logo/Mastercard.png" alt="Mastercard"></li>
+            <li><img src="logo/American Express.png" alt="American Express"></li>
+            <li><img src="logo/paypal.png" alt="PayPal"></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Redes Sociais</h4>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Pizzaria Francischini. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="scroll-to-top-btn" class="scroll-to-top-btn" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>  
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>Este site usa cookies para melhorar sua experiência. Ao continuar navegando, você concorda com o uso de cookies de acordo com nossa <a href="/politica-de-cookies">Política de Cookies</a>.</p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn aceitar" onclick="aceitarCookies()">Aceitar</button>
+        <button class="cookie-btn recusar" onclick="recusarCookies()">Recusar</button>
+      </div>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>

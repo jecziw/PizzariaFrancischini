@@ -1,0 +1,145 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #4776E6, #8E54E9);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.error-message {
+color: #ff4444;
+display: block;
+margin-top: 5px;
+}
+
+.login-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 450px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: appear 0.5s ease-out forwards;
+}
+
+.login-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  color: #333;
+  font-size: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-input:focus {
+  background-color: #e3e8f0;
+  border-color: #8e54e9; /* Cor da borda ao focar */
+}
+
+.login-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px; /* Ajuste no padding horizontal */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #d68910;
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Sombra ao passar o mouse */
+}
+
+.signup-link {
+  color: #f39c12;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #e58d0e;
+}
+
+.social-login {
+  margin-top: 30px;
+}
+
+.social-login-button {
+  display: inline-block;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-login-button:hover {
+  background-color: #f3f5f8;
+  color: #555;
+  transform: scale(1.05);
+}
+
+.footer-link {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #777;
+}
+
+.forgot-password {
+margin-top: 10px; /* Adicione um espaçamento superior */
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 80%; /* Reduzir a largura do contêiner em telas menores */
+  }
+
+  .social-login {
+    flex-direction: column; /* Alterar para coluna em telas menores */
+    align-items: flex-start; /* Alinhar os itens à esquerda em telas menores */
+  }
+
+  .social-login-button {
+    width: 100%; /* Definir a largura total em telas menores */
+    margin-right: 0; /* Remover espaçamento à direita em telas menores */
+    margin-bottom: 10px; /* Adicionar espaçamento inferior entre os botões */
+  }
+}
+
+/* Restante do estilo CSS */
