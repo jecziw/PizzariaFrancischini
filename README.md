@@ -42,7 +42,7 @@ Se você deseja contribuir para o desenvolvimento deste projeto, siga estas etap
 
 ## Aviso de Direitos Autorais
 
-Este projeto é protegido por direitos autorais e pertence à Pizzaria Francischini. Qualquer uso não autorizado deste código, incluindo mas não se limitando a cópia, distribuição ou modificação sem permissão prévia por escrito da Pizzaria Francischini, é estritamente proibido e pode resultar em ações legais.
+Este projeto é protegido por direitos autorais e pertence exclusivamente ao Jeferson Goulart. Qualquer uso não autorizado deste código, incluindo mas não se limitando a cópia, distribuição ou modificação sem permissão prévia por escrito da Pizzaria Francischini, é estritamente proibido e pode resultar em ações legais.
 
 ## Contato
 
